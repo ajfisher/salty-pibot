@@ -35,3 +35,10 @@ kbd:
 
 Australia/Melbourne:
   timezone.system
+
+/home/pi/.vimrc:
+  file.managed:
+    - source: salt://common/vimrc
+    - replace: false
+    - user: pi
+    - group: pi
