@@ -13,6 +13,7 @@ remove-redundant:
       - bluej
       - geany
       - greenfoot
+      - nodejs
       - sonic-pi
       - scratch
       - wolfram-engine
