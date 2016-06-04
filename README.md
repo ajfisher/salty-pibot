@@ -37,13 +37,31 @@ Accept keys from minions as required.
     * scratch
     * libreoffice
     * bluefoot
+    * legacy nodejs
 * installs:
     * iceweasel
     * git
+    * nvm
+        * nodejs 6
+        * sets paths
 * sets local timezone
 * sets AU locale and US keyboard layout
+* deploys robotnik:
+    * retrieves remote from git
+    * updates to use appropriate branch
+	* runs npm to get dependencies
+	* runs gulp to produce the distribution files
+* Sets up desktop
+    * adds iceweasel to panel
+    * sets nodebots desktop
 
-* Installs nvm and then installs node 6
-* Deploy the robotnik package to the pi user folder
-* Installs npm dependencies
+## Todo
 
+* create shortcut for running server on desktop that:
+	* runs webserver
+	* launches web browser
+* add menu items to the panel
+	* server launcher for robotnik
+* add hostapd and dnsmasq config
+	* include rc.local stuff
+* 
