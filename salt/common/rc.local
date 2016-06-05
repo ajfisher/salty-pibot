@@ -18,7 +18,41 @@ if [ "$_IP" ]; then
 fi
 
 {% if bt_mac %}
+# bind a designated BT module to this rpi on /dev/rfcomm0
 rfcomm bind /dev/rfcomm0 {{ bt_mac }}
+{% endif %}
+
+{% if hostap %}
+# if there's no network then spin up a host to connect to
+# salt managed
+
+_APIP="192.168.40.1"
+_WLAN_DEVICE="wlan0"
+
+_IP=$(hostname -I) || true
+if [ "$_IP" ]
+then
+    printf "At least one network interface is configured and is up\n"
+else
+    printf "No network interface has come up so let's configure the access point\n"
+
+    ifdown $_WLAN_DEVICE
+    sleep 5
+
+    printf "Bringing up hostapd\n"
+    service hostapd restart
+    sleep 5
+
+    printf "Configuring wlan interface\n"
+    ifconfig $_WLAN_DEVICE $_APIP
+    sleep 5
+
+    printf "Configuring DNSMasq\n"
+    service dnsmasq restart
+    sleep 5
+
+    printf "You should now have an access point\n"
+fi
 {% endif %}
 
 exit 0

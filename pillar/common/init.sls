@@ -5,3 +5,4 @@ bluetooth:
     nodebots02: >
         "thisis a test"
 
+hostap: True

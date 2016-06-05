@@ -52,6 +52,11 @@ Australia/Melbourne:
 {%    set bt_mac = "" %}
 {% endif %}
 
+{% set hostap = False %}
+{% if salt['pillar.get']('hostap') %}
+{%  set hostap = pillar['hostap'] %}
+{% endif %}
+
 /etc/rc.local:
   file.managed:
     - source: salt://common/rc.local
@@ -61,3 +66,4 @@ Australia/Melbourne:
     - context:
       bt_mac: {{ bt_mac }}
       host: {{ host }}
+      hostap: {{ hostap }}
