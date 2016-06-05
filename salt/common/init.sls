@@ -1,5 +1,7 @@
 # Installs and removes the various common packages needed
 
+{% set host = grains['host'] %}
+
 core-items:
   pkg.installed:
     - names:
@@ -42,3 +44,20 @@ Australia/Melbourne:
     - replace: false
     - user: pi
     - group: pi
+
+{% set bt_host_pillar = 'bluetooth:macs:' + host %}
+{% if salt['pillar.get'](bt_host_pillar) %}
+{%    set bt_mac = pillar['bluetooth']['macs'][host] %}
+{% else %}
+{%    set bt_mac = "" %}
+{% endif %}
+
+/etc/rc.local:
+  file.managed:
+    - source: salt://common/rc.local
+    - replace: true
+    - user: root
+    - template: jinja
+    - context:
+      bt_mac: {{ bt_mac }}
+      host: {{ host }}

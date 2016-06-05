@@ -24,6 +24,19 @@ Bind the minion to the master in /etc/salt/minion as
 master: themis.local
 ```
 
+You will have to pair the bluetooth module manually as there's not an easy way
+to do this:
+
+```
+bluetoothctl
+scan on
+agent on
+pair xx:xx:xx:xx
+trust xx:xx:xx:xx
+```
+
+Which will then make it permanent
+
 ## Master config
 
 Accept keys from minions as required.
@@ -61,6 +74,10 @@ Accept keys from minions as required.
     * adds iceweasel to panel
     * sets nodebots desktop
 * Allows GPU memory level to be set appropriately
+* deploys test code:
+    * led test using specified port
+* sets up rc.local:
+    * Auto bind the bt device
 
 ## Todo
 
@@ -71,4 +88,3 @@ Accept keys from minions as required.
 	* server launcher for robotnik
 * add hostapd and dnsmasq config
 	* include rc.local stuff
-* add bluetooth configuration and auto pair
