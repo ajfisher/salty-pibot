@@ -73,11 +73,16 @@ Accept keys from minions as required.
 * Sets up desktop
     * adds iceweasel to panel
     * sets nodebots desktop
+    * adds server launcher
 * Allows GPU memory level to be set appropriately
 * deploys test code:
     * led test using specified port
 * sets up rc.local:
     * Auto bind the bt device
+* sets up host ap routing
+    * installs dnsmasq for local dhcp
+    * installs hostapd to switch RPi to Host AP mode
+    * configures rc.local to detect network and set up host mode
 
 ## Todo
 
@@ -86,5 +91,3 @@ Accept keys from minions as required.
 	* launches web browser
 * add menu items to the panel
 	* server launcher for robotnik
-* add hostapd and dnsmasq config
-	* include rc.local stuff

@@ -17,4 +17,10 @@ desktop_conf:
     - source: salt://desktop/desktop-items-0.conf
     - user: pi
 
+#desktop_launcher:
+#  file.managed:
+#    - name: /home/pi/Desktop/Robotnik Server
+#    - source: salt://desktop/desktop_launcher
+#    - user: pi
+#    - mode: 744
 
