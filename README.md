@@ -4,6 +4,7 @@ Salt config for managing salt states for RPi NodeBots development
 ## Minion config
 
 * Put the `wpa_supplicant` file onto the boot partition after dd is finished
+* ssh pi@raspberrypi.local to get to machine to configure next steps.
 * Update the hostname to not be raspberrypi
 * Install the minion deps.
 
@@ -26,6 +27,11 @@ master: themis.local
 ## Master config
 
 Accept keys from minions as required.
+
+## Master commands
+
+* `salt 'nodebots*' state.highstate` will build common elements
+
 
 ## Configuration
 
@@ -54,6 +60,7 @@ Accept keys from minions as required.
 * Sets up desktop
     * adds iceweasel to panel
     * sets nodebots desktop
+* Allows GPU memory level to be set appropriately
 
 ## Todo
 
@@ -64,4 +71,4 @@ Accept keys from minions as required.
 	* server launcher for robotnik
 * add hostapd and dnsmasq config
 	* include rc.local stuff
-* 
+* add bluetooth configuration and auto pair

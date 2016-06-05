@@ -1,0 +1,4 @@
+base:
+  'nodebots*':
+    - common
+    - nodejs
