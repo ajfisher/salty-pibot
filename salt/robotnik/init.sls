@@ -20,3 +20,12 @@ repo:
       - pkg: git
       - file: /home/pi/dev
 
+readme-repo:
+  git.latest:
+    - name: https://github.com/ajfisher/robotnik-workshop
+    - rev: master
+    - target: /home/pi/Desktop/workshop
+    - user: pi
+    - require:
+      - pkg: git
+
