@@ -6,6 +6,7 @@ Salt config for managing salt states for RPi NodeBots development
 * Put the `wpa_supplicant` file onto the boot partition after dd is finished
 * ssh pi@raspberrypi.local to get to machine to configure next steps.
 * Update the hostname to not be raspberrypi
+* restart (otherwise you'll need to delete the `/etc/salt/minion_id` afterwards
 * Install the minion deps.
 
 https://docs.saltstack.com/en/latest/topics/installation/debian.html
@@ -70,6 +71,7 @@ Accept keys from minions as required.
     * updates to use appropriate branch
 	* runs npm to get dependencies
 	* runs gulp to produce the distribution files
+    * deploys code for the workshop notes
 * Sets up desktop
     * adds iceweasel to panel
     * sets nodebots desktop
@@ -84,10 +86,7 @@ Accept keys from minions as required.
     * installs hostapd to switch RPi to Host AP mode
     * configures rc.local to detect network and set up host mode
 
-## Todo
+## TODO
 
-* create shortcut for running server on desktop that:
-	* runs webserver
-	* launches web browser
-* add menu items to the panel
-	* server launcher for robotnik
+* set up deploy of files into robotnik folder
+    * run gulp command on completion

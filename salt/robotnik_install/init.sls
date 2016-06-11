@@ -1,6 +1,13 @@
 # moved to it's own file as it's pretty hefty
 {% set robotnik_path = "/home/pi/dev/robotnik" %}
 
+remove_electron:
+  file.replace:
+    - name: {{ robotnik_path }}/package.json
+    - pattern: |
+        ^ .*\"electron.*,$
+    - repl: ""
+
 npm_install:
   cmd:
     - run
