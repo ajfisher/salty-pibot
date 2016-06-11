@@ -2,7 +2,7 @@ bluetooth:
   base: "20:16:02:14:"
   macs:
     nodebots01: >
-        39:41
+        "39:41"
     nodebots02: >
         25:78
     nodebots03: >

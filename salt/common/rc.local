@@ -19,7 +19,7 @@ fi
 
 {% if bt_mac %}
 # bind a designated BT module to this rpi on /dev/rfcomm0
-rfcomm bind /dev/rfcomm0 {{ bt_mac }}
+rfcomm bind /dev/rfcomm0 {{bt_base}}{{ bt_mac }}
 {% endif %}
 
 {% if hostap %}
