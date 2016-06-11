@@ -47,7 +47,7 @@ Australia/Melbourne:
 
 {% set bt_host_pillar = 'bluetooth:macs:' + host %}
 {% if salt['pillar.get'](bt_host_pillar) %}
-{%    set bt_mac = pillar['bluetooth']['macs'][host] %}
+{%    set bt_mac = pillar['bluetooth']['base'] + pillar['bluetooth']['macs'][host] %}
 {% else %}
 {%    set bt_mac = "" %}
 {% endif %}
