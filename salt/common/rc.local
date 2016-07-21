@@ -17,7 +17,7 @@ if [ "$_IP" ]; then
   printf "My IP address is %s\n" "$_IP"
 fi
 
-{% if bt_mac %}
+{% if bt_mac is defined %}
 # bind a designated BT module to this rpi on /dev/rfcomm0
 rfcomm bind /dev/rfcomm0 {{bt_base}}{{ bt_mac }}
 {% endif %}

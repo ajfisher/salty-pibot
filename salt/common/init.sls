@@ -64,7 +64,9 @@ Australia/Melbourne:
     - user: root
     - template: jinja
     - context:
+      {% if pillar["bluetooth"] is defined %}
       bt_base: "{{ pillar["bluetooth"]["base"] }}"
       bt_mac: {{ bt_mac }}
+      {% endif %}
       host: {{ host }}
       hostap: {{ hostap }}
