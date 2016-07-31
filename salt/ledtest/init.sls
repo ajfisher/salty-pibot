@@ -24,7 +24,7 @@
 npm_install:
   cmd:
     - run
-    - name: "source ~/.nvm/nvm.sh; npm install"
+    - name: ". ~/.nvm/nvm.sh; npm install"
     - cwd: /home/pi/dev/ledtest
     - user: pi
     - onlyif: test -f /home/pi/dev/ledtest/package.json
