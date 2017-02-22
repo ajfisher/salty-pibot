@@ -20,6 +20,9 @@ remove-redundant:
       - scratch
       - wolfram-engine
       - mathematica
+      - libreoffice
+      - libreoffice-core
+      - libreoffice-common
 
 au_locale:
   locale.present:
