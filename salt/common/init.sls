@@ -8,6 +8,7 @@ core-items:
       - vim
       - iceweasel
       - git
+      - screen
 
 remove-redundant:
   pkg.removed:

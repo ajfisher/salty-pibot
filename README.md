@@ -58,6 +58,7 @@ Accept keys from minions as required.
     * libreoffice
     * bluefoot
     * legacy nodejs
+    * libreoffice
 * installs:
     * iceweasel
     * git

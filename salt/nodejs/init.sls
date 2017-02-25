@@ -1,4 +1,4 @@
-{% set node_version = 6 %}
+{% set node_version = 6.9 %}
 nvm-deps:
   pkg.installed:
     - names:
