@@ -16,6 +16,7 @@ repo:
     - name: https://github.com/ajfisher/robotnik
     - rev: 2017-feb-updates
     - target: {{ robotnik_path }}
+    - force_checkout: true
     - user: pi
     - require:
       - pkg: git
@@ -27,6 +28,7 @@ workshop-repo:
     - rev: master
     - target: {{ workshop_repo_path }}
     - user: pi
+    - force_checkout: True
     - require:
       - pkg: git
 
